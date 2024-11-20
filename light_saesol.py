@@ -6,20 +6,14 @@ current_people = 0                           #현재 과방에 있는 사람수�
 last_activity_time = time.time()            # 마지막으로 사람이 출입한 시간을 기록
 
 def ceiling_light(action, student_id=None, student_name=None, timeout=14400):  #입실,퇴실,자동소등/입,퇴실 학생 학번,이름(선택사항),자동소등 기본값
-    """
-    천장등 제어 함수
-    :param action: 'enter', 'leave', or 'check'
-    :param student_id: 학번 (입실/퇴실 시 사용)
-    :param student_name: 이름 (입실/퇴실 시 사용)
-    :param timeout: 자동 소등 시간 (초 단위)
-    """
+
     global light_on, current_people, last_activity_time #함수내부에서 전역변수를 수정하기 위해 사용
 
-    if action == "enter":
+    if action == "in":
         # 입실 처리 작성 예정
         pass
 
-    elif action == "leave":
+    elif action == "out":
         # 퇴실 처리 작성 예정
         pass
 
@@ -28,7 +22,7 @@ def ceiling_light(action, student_id=None, student_name=None, timeout=14400):  #
         pass
 
     else:
-        print("잘못된 동작입니다. 'enter', 'leave', 'check' 중 하나를 선택하세요.")
+        print("잘못된 동작입니다. 'in', 'out', 'check' 중 하나를 선택하세요.")
 
     # 현재 상태 출력
     return {
